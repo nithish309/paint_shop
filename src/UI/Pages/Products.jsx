@@ -131,7 +131,11 @@ const Products = ({ setCartItems, theme }) => {
                       ₹ {product.price}
                     </h2>
                     <div className="card-actions mt-2 flex justify-between items-center">
-                      <Link
+                      <Link 
+                        style={{
+                        backgroundColor: theme === "light" ? "#F2F2F2" : "#333",
+                        color: theme === "light" ? "#53585E" : "#fff",
+                        }}
                         to={`/product/${product._id}`}
                         className="btn btn lora-regular"
                       >
