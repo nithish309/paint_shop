@@ -3,8 +3,8 @@ const Footer = ({ theme }) => {
       <footer
         className="footer bg-base-300 text-base-content p-10 w-full md:h-screen lg:h-full"
         style={{
-          backgroundColor: theme === "light" ? null : "#333",
-          color: theme === "light" ? null : "#fff",
+          backgroundColor: theme === "light" ?"#E5E7E6" : "#333",
+          color: theme === "light" ? "#212934" : "#fff",
         }}
       >
         <nav>
