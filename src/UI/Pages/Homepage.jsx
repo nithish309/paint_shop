@@ -79,7 +79,10 @@ const Homepage = ({ props, theme }) => {
                 matching, and all the tools needed for any painting project.
               </p>
               <Link to="/products">
-                <button className="btn btn-primary">View Products</button>
+                <button className="btn btn-primary"style={{
+          backgroundColor: theme === "light" ? "white" : "#333",
+          color: theme === "light" ? "#4900FF" : "#fff",
+        }}>View Products</button>
               </Link>
             </div>
 
