@@ -133,8 +133,8 @@ const Products = ({ setCartItems, theme }) => {
                     <div className="card-actions mt-2 flex justify-between items-center">
                       <Link 
                         style={{
-                        backgroundColor: theme === "light" ? "#F2F2F2" : "#333",
-                        color: theme === "light" ? "#53585E" : "#fff",
+                        backgroundColor: theme === "light" ? "#F2F2F2" : "black",
+                        color: theme === "light" ? "black" : "#fff",
                         }}
                         to={`/product/${product._id}`}
                         className="btn btn lora-regular"
@@ -142,6 +142,10 @@ const Products = ({ setCartItems, theme }) => {
                         View
                       </Link>
                       <button
+                        style={{
+                        backgroundColor: theme === "light" ? "#F2F2F2" : "black",
+                        color: theme === "light" ? "black" : "#fff",
+                        }}
                         onClick={() => handleAddToCart(product)}
                         className="btn btn lora-regular"
                       >
