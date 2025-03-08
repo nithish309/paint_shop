@@ -70,6 +70,31 @@ const Products = ({ setCartItems, theme }) => {
     }
   };
 
+  if(loading){
+    return (
+      <div>
+      <div className="flex justify-center items-center h-screen">
+        <LoadingSpinner />
+      </div>
+      {theme === "dark" ? <hr /> : null}
+      </div>
+      
+    );
+  }
+  else{
+    if (error) {
+      return <div>
+        <div className="flex justify-center items-center h-screen">
+        <p className="text-center mt-10 font-bold lg:text-2xl text-lg">
+          {error}
+        </p>
+        </div>
+        {theme === "dark" ? <hr /> : null}
+
+    </div>
+    }
+  }
+
   return (
     <div>
       <section
@@ -95,14 +120,6 @@ const Products = ({ setCartItems, theme }) => {
             />
           </div>
         </div>
-
-        {loading ? (
-          <LoadingSpinner />
-        ) : error ? (
-          <p className="text-center mt-10 font-bold lg:text-2xl text-lg">
-            {error}
-          </p>
-        ) : (
           <div className="flex flex-wrap justify-center lg:gap-20 lg:mt-5 lg:mb-20 mb-10 mt-5 sm:gap-0">
             {filteredProducts.length > 0 ? (
               filteredProducts.map((product) => (
@@ -131,21 +148,13 @@ const Products = ({ setCartItems, theme }) => {
                       ₹ {product.price}
                     </h2>
                     <div className="card-actions mt-2 flex justify-between items-center">
-                      <Link 
-                        style={{
-                        backgroundColor: theme === "light" ? "#F2F2F2" : "black",
-                        color: theme === "light" ? "black" : "#fff",
-                        }}
+                      <Link
                         to={`/product/${product._id}`}
                         className="btn btn lora-regular"
                       >
                         View
                       </Link>
                       <button
-                        style={{
-                        backgroundColor: theme === "light" ? "#F2F2F2" : "black",
-                        color: theme === "light" ? "black" : "#fff",
-                        }}
                         onClick={() => handleAddToCart(product)}
                         className="btn btn lora-regular"
                       >
@@ -161,7 +170,7 @@ const Products = ({ setCartItems, theme }) => {
               </p>
             )}
           </div>
-        )}
+        
       </section>
       {theme === "dark" ? <hr /> : null}
     </div>
